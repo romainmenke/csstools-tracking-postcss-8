@@ -9,7 +9,9 @@ for x in $(ls); do
 
 	postcss_dependency=$(cat package.json | jq -r '.dependencies.postcss')
 	if [ "$postcss_dependency" != "null" ]; then
-		echo "${x}\n  - has postcss dependency : ${postcss_dependency}\n"
+		echo "${x}"
+		echo "  - has postcss dependency : ${postcss_dependency}"
+		echo "  - https://github.com/csstools/$x\n"
 	fi
 
 	cd $current_dir;

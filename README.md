@@ -13,9 +13,11 @@ bash needs-update.sh
 output looks like : 
 
 ```
-postcss-unnth
-  - has postcss dependency : ^5.0.10
+postcss-write-svg
+  - has postcss dependency : ^5.2.6
+  - https://github.com/csstools/postcss-write-svg
 
-postcss-unopacity
-  - has postcss dependency : ^5.2.9
+precss
+  - has postcss dependency : ^7.0.6
+  - https://github.com/csstools/precss
 ```
