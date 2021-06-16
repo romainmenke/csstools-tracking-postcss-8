@@ -9,13 +9,17 @@ counter=0
 for x in $(ls); do
 	cd $x;
 
-	postcss_dependency=$(cat package.json | jq -r '.dependencies.postcss')
-	if [ "$postcss_dependency" != "null" ]; then
-		echo "${x}"
-		echo "  - has postcss dependency : ${postcss_dependency}"
-		echo "  - https://github.com/csstools/$x\n"
+	if [ -f ./package.json ]; then
 
-		let counter=counter+1;
+		postcss_dependency=$(cat package.json | jq -r '.dependencies.postcss')
+		if [ "$postcss_dependency" != "null" ]; then
+			echo "${x}"
+			echo "  - has postcss dependency : ${postcss_dependency}"
+			echo "  - https://github.com/csstools/$x\n"
+
+			let counter=counter+1;
+		fi
+
 	fi
 
 	cd $current_dir;
