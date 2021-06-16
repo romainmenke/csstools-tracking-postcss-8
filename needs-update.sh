@@ -4,6 +4,8 @@ set -e
 cd ./repos
 current_dir=$(pwd)
 
+counter=0
+
 for x in $(ls); do
 	cd $x;
 
@@ -12,7 +14,11 @@ for x in $(ls); do
 		echo "${x}"
 		echo "  - has postcss dependency : ${postcss_dependency}"
 		echo "  - https://github.com/csstools/$x\n"
+
+		let counter=counter+1;
 	fi
 
 	cd $current_dir;
 done
+
+echo "\n${counter} projects need updating"
